@@ -23,6 +23,8 @@ Including another URLconf
 
 
 from django.urls import path
+from django.contrib import admin
+from django.urls import include, path
 from billing_system.views import EmployeeListCreate, ProductListCreate, CustomerListCreate, BillListCreate
 
 urlpatterns = [
@@ -30,5 +32,6 @@ urlpatterns = [
     path('products/', ProductListCreate.as_view(), name='product-list-create'),
     path('customers/', CustomerListCreate.as_view(), name='customer-list-create'),
     path('bills/', BillListCreate.as_view(), name='bill-list-create'),
+    path('', include('billing_system.urls')),
+    path('admin/', admin.site.urls),
 ]
-
