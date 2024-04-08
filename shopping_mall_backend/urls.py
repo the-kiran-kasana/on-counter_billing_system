@@ -34,4 +34,10 @@ urlpatterns = [
     path('bills/', BillListCreate.as_view(), name='bill-list-create'),
     path('', include('billing_system.urls')),
     path('admin/', admin.site.urls),
+    path('products/', ProductListCreate.as_view(), name='product-list'),
+    #path('customers/create/', CustomerCreateView.as_view(), name='customer-create'),
+    #path('customers/<int:pk>/delete/', CustomerDeleteView.as_view(), name='customer-delete'),
+
+   # path('products/<int:pk>/', ProductRetrieveUpdateDestroy.as_view(), name='product-detail'),
+
 ]
